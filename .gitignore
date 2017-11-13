@@ -9,7 +9,9 @@ tests/mocks/env/
 .sass-cache/
 
 # Development files
-/node_modules
 /assets/vendor/
+
+# Node files
+/node_modules/
 
 .idea/
