@@ -21,8 +21,21 @@
 namespace CRGEnterprises\CollapsibleContent;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit( 'Cheatin&#8217; uh?' );
+	exit( 'Yo, what are you looking at?' );
 }
+
+define( 'COLLAPSIBLE_CONTENT_PLUGIN', __FILE__ );
+define( 'COLLAPSIBLE_CONTENT_DIR', plugin_dir_path( __FILE__ ) );
+
+$plugin_url = plugin_dir_url( __FILE__ );
+if ( is_ssl() ) {
+	$plugin_url = str_replace( 'http://', 'https://', $plugin_url);
+}
+
+define( 'COLLAPSIBLE_CONTENT_URL', $plugin_url );
+define( 'COLLAPSIBLE_CONTENT_TEXT_DOMAIN', 'collapsible_content' );
+
+include( __DIR__ . '/src/plugin.php' );
 
 /**
  * Setup the plugin's constants.
@@ -31,6 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return void
  */
+
+ /*
 function init_constants() {
 	$plugin_url = plugin_dir_url( __FILE__ );
 	if ( is_ssl() ) {
@@ -40,7 +55,7 @@ function init_constants() {
 	define( 'UPDEVTOOLS_URL', $plugin_url );
 	define( 'UPDEVTOOLS_DIR', plugin_dir_path( __FILE__ ) );
 }
-
+*/
 /**
  * Launch the plugin
  *
@@ -48,6 +63,8 @@ function init_constants() {
  *
  * @return void
  */
+
+/*
 function launch() {
 	init_constants();
 
@@ -55,3 +72,4 @@ function launch() {
 }
 
 launch();
+*/
