@@ -33,9 +33,15 @@
      echo '<p>Sorry there are no FAQs</p>';
    }
 
+   $use_term_container  = true;
+   $show_term_name = true;
+   $is_calling_source   = 'template';
+
    foreach ( $records as $record ) {
+     $term_slug = $record['term_slug'];
+
      // load the view file
-     include( __DIR__ . '/views/container.php' );
+     include( FAQ_MODULE_DIR . '/views/container.php' );
      //$hidden_content = do_shortcode( $hidden_content );
    }
 
@@ -48,10 +54,11 @@
    );
 
    foreach ( $faqs as $faq ) {
-     // load the view file
+     $post_title = $faq['post_title'];
      $hidden_content = do_shortcode( $faq['post_content'] );
 
-     include( __DIR__ . '/views/faq.php' );
+     // load the view file
+     include( FAQ_MODULE_DIR . '/views/faq.php' );
    }
  }
 

@@ -13,7 +13,7 @@
  namespace CRGEnterprises\Module\FAQ\Custom;
 
  add_action( 'init', __NAMESPACE__ . '\register_custom_topic_taxonomy' );
- 
+
  /**
   * Register the custom post type.
   *
@@ -29,6 +29,8 @@
  		 'labels'  => get_taxonomy_labels_config( 'Topic', 'Topics' ),
  		 'hierarhical' => true,
      'show_admin_column' => true,
+     'public' => false,
+     'show_ui' => true,
  	  );
 
  	  register_taxonomy( 'topic', array( 'faq' ), $args );
